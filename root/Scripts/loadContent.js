@@ -3,7 +3,7 @@ console.log("Running");
 let contentContainer = null;
 let galleryLink = null;
 
-window.onload = function () {
+window.onload = () => {
     console.log("Window loaded")
 
     galleryLink = document.getElementById("galleryLink");
@@ -11,6 +11,19 @@ window.onload = function () {
     //contentContainer.innerHTML='<object type="text/html" data="root/Public/Content/home.html"></object>';
 
     galleryLink.addEventListener('click', () => {
-        contentContainer.innerHTML='<object type="text/html" data="root/Public/Content/gallery.html"></object>';
+        test();
     });
+}
+
+function test() {
+    //contentContainer.innerHTML='<object type="text/html" data="root/Public/Content/gallery.html"></object>';
+
+    const xmlhttp = new XMLHttpRequest();
+
+    contentContainer.innerHTML = xmlhttp.responseText;
+
+    const gallery = "https://danfollesa.github.io/root/Public/Content/gallery.html";
+
+    xmlhttp.open("GET", gallery, true);
+    xmlhttp.send(null);
 }
