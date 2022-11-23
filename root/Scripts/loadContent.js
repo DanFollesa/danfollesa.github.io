@@ -11,6 +11,7 @@ window.onload = () => {
     //contentContainer.innerHTML='<object type="text/html" data="root/Public/Content/home.html"></object>';
 
     galleryLink.addEventListener('click', () => {
+        console.log("Click successful");
         test();
     });
 }
@@ -23,6 +24,7 @@ function test() {
     contentContainer.innerHTML = xmlhttp.responseText;
 
     const gallery = "https://danfollesa.github.io/root/Public/Content/gallery.html";
+    console.log("Getting https://danfollesa.github.io/root/Public/Content/gallery.html")
 
     xmlhttp.open("GET", gallery, true);
     xmlhttp.send(null);
