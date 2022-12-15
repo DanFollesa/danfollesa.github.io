@@ -12,7 +12,7 @@ buttonGallery.addEventListener("click", () => {
 
 console.log("Starting to fetch gallery")
 
-fetch('..\Public\Content\gallery.json')
+fetch('gallery.json')
     .then( response => {
         if(!response.ok){
             throw new Error(`HTTP error: ${response.status}`);
